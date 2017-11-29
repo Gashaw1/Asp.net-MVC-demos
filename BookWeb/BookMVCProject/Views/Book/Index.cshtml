@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = TempData["result"];
+
+}
+@{
+    ViewBag.imgs = TempData["imgs"];
+}
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<h2>@ViewBag.Title</h2>
+<style>
+    .bookDiv {
+        width: 400px;
+        height: 400px;
+        border: 1px solid lightgray;
+        display: block;
+        float: left;
+    }
+
+    #divBookView {
+        width: 600px;
+        margin-left: 20px;
+        float: right;
+    }
+</style>
+
+<div id="divBookUpload" class="bookDiv">
+    <p>Book Upload Partial View</p>
+    @Html.Partial("_bookUpload")
+</div>
+
+<div id="divBookView" class="bookDiv">
+    <p>Book list Partial View</p>
+
+    @*@Html.ActionLink("DisplayBook", "DisplayBook");*@
+   
+
+    @Html.Partial("_booksList")
+
+</div>
+@Ajax.ActionLink("DisplayBook Ajax call", "DisplayBook", new AjaxOptions()
+
+{
+    HttpMethod = "Get",
+
+    UpdateTargetId = "divBookView",
+    InsertionMode = InsertionMode.Replace
+})
+
+
+
+
+
+
+
+
+<script src="http://localhost:51563/Scripts/jquery.unobtrusive-ajax.min.js"></script>

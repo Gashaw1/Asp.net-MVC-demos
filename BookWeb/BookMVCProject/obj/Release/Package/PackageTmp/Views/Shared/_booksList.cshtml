@@ -1,0 +1,34 @@
+﻿@model IEnumerable<BookBusinessLayerProject.Model.Book>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.bookImgPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.userID)
+        </th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/Images/@item.bookImgeName" class="dker" alt="..." width="100" height="100" />
+
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    }
+</table>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="conStr-Web.config Connection String" description="conStr Connection String used in web.config by the application to access the database." defaultValue="workstation id=DatabaseA.mssql.somee.com;packet size=4096;user id=G404_SQLLogin_1;pwd=kih3x9ej47;data source=DatabaseA.mssql.somee.com;persist security info=False;initial catalog=DatabaseA" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\User\\Desktop\\CSharpDemos\\BookWeb\\BookMVCProject\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='conStr']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,28 @@
+﻿
+select * from Users
+
+Create table Tbl_Book
+(
+	bookID int Primary key identity,
+    bookImgeName nvarchar(225),
+	bookISBN nvarchar(225),
+    bookImgPath nvarchar(max),
+	userID int
+	Foreign Key (userID) References Users(UserID) 
+)
+go
+Create Proc SP_Book_Upload
+@bookImgeName nvarchar(255),
+@bookISBN nvarchar(225),
+@bookImgPath nvarchar (max),
+@userID int,
+@NewBookImgID int output
+
+as
+begin
+	Insert into Tbl_Book 
+	values (@bookImgeName, @bookISBN, @bookImgPath, @userID)
+	
+	--return the last inserted image id
+	select @NewBookImgID = SCOPE_IDENTITY()
+end
