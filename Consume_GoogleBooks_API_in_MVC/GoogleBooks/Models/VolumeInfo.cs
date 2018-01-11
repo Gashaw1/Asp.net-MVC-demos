@@ -30,5 +30,10 @@ namespace GoogleBooks.Models
         public List<string> types { get; set; }
         public List<string> identifiers { get; set; }   
     }
+    public class ReadingModes
+    {
+        public bool text { get; set; }
+        public bool image { get; set; }
+    }
 
 }
