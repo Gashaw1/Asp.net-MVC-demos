@@ -64,7 +64,7 @@ namespace BookMVCProject.Controllers
                     byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
                     Image imge = Image.FromStream(stream);
                     string strb64 = Convert.ToBase64String(bytes);
-                    blob.UploadFromStream(imge);
+                  //  blob.UploadFromStream(imge);
                             
                     Book book = new Book();
                     book.bookImgeName = bookName;
